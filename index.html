@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Government Job Aspirants Portal</title>
+    <title>Mission Sarkari Naukari</title>
 
     <style>
         body {
@@ -18,18 +18,7 @@
             text-align: center;
         }
 
-        nav {
-            background-color: #083b8a;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        
 
         section {
             padding: 20px;
@@ -43,13 +32,25 @@
         }
 
        
-        .images img {
-            width: 30%;
-            margin: 10px;
-            border-radius: 5px;
+        .image-container {
+            display :flex;
+            justify-content: center;
+            gap:5px;
+            flex-wrap: nowrap;
+        }
+        
+        .image-container img{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border: 1px solid black;
+            display: block;
         }
 
-      
+        figure{
+            text-align: center;
+            
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -110,6 +111,11 @@
             width: 700px;
             height: 600px;
             border: none;
+            text-align : center;
+        }
+        .center-media{
+            display:block;
+            margin:20px auto;
         }
     </style>
 </head>
@@ -117,25 +123,37 @@
 <body>
 
 <header>
-    <h1>Government Job Aspirants Portal</h1>
-    <p>Your Path to Sarkari Naukri</p>
+    <h1>Mission Sarkari Naukari</h1>
+    <p>Government jobs exams portal</p>
 </header>
 
 
 <div>
-    <h2>About Government Jobs</h2>
+    <h2>Government Jobs</h2>
     <p>
-        Government jobs offer stability, respect, and long-term career growth.
-        This portal helps aspirants prepare for SSC, Banking, Railways, UPSC,
-        and State Government exams.
+        These are the jobs provided by the govt to work in public departments,offices,or organizations.These jobs are 
+        meant toserve the public and are funded by the government.These jobs will be allocated based on the qualification,
+        age limit and through exams.Government jobs offer stability, respect, and long-term career growth.There are 
+        different govt jobs like central govt jobs,state govt jobs,public sector undertaking's,local govt jobs.This
+        portal helps aspirants prepare for SSC, Banking, Railways, UPSC,and State Government exams.
     </p>
 </div>
 
-<div class="images">
-    <h2>Preparation & Success</h2>
-    <img src="lions.jpg" alt="Government Job">
-    <img src="exampre.jpg" alt="Preparation">
-    <img src="success.jpg" alt="Success">
+
+<h2>Preparation & Success</h2>
+<div class="image-container">
+    <figure>
+        <img src="lions.jpg" alt="Government Job" >
+        <figcaption>Govt Jobs</figcaption>
+    </figure>
+    <figure>
+        <img src="exampre.jpg" alt="Preparation" >
+        <figcaption>Exam Preparation</figcaption>
+    </figure>
+    <figure>
+        <img src="success.jpg" alt="Success" >
+        <figcaption>Success</figcaption>
+    </figure>
 </div>
 
 <div>
@@ -166,14 +184,14 @@
 
 <div>
     <h2>Motivational Audio </h2>
-    <audio controls loop>
+    <audio controls loop class = "center-media">
         <source src="motivational_audio.mp3.mpeg" type="audio/mp3">
       
     </audio>
 </div>
 <div>
     <h2>Preparation Video</h2>
-    <video width="300px" controls>
+    <video  controls class="center-media" width="500"  height = "500" >
         <source src="motivational_video.mp4.mp4" type="video/mp4">
        
     </video>
@@ -181,7 +199,7 @@
 
 <div>
     <h2>Useful websites Resources</h2>
-    <iframe src="resources.jpg.jpeg">
+    <iframe src="resources.jpg.jpeg" class = "center-media">
 
     </iframe>
 </div>
