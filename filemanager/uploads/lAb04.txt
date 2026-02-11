@@ -1,0 +1,93 @@
+#A Part A:
+#Based on the dataset we printed rows,shape,columns in part A.
+#Also we imported libraries like numpys,pandas,seaborn and matplot.
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df =pd.read_csv("/content/Dataset.zip")
+
+print("First 5 rows of the dataset:")
+print(df.head())
+
+print("\nShape of the dataset:")
+print(df.shape)
+print("\nColumns in the dataset:")
+print(df.columns)
+
+#B Part B:
+#Coming to part B data types,missing values we showed as output.
+print("\nData types of columns:")
+print(df.dtypes)
+
+print("\nMissing values in each column:")
+print(df.isnull().sum())
+
+
+numerical_cols = df.select_dtypes(include=np.number).columns
+categorical_cols = df.select_dtypes(include='object').columns
+
+df[numerical_cols] = df[numerical_cols].fillna(df[numerical_cols].mean())
+
+for col in categorical_cols:
+    df[col].fillna(df[col].mode()[0], inplace=True)
+
+
+print("\nMissing values after handling:")
+print(df.isnull().sum())
+
+#C PartC:
+#In Part C we printed Mean,Median,Standard Deviation,Minimum values and Maximum values.
+print("\nMean of numerical columns:")
+print(df[numerical_cols].mean())
+
+print("\nMedian of numerical columns:")
+print(df[numerical_cols].median())
+
+print("\nStandard Deviation of numerical columns:")
+print(df[numerical_cols].std())
+
+print("\nMinimum and Maximum values:")
+print(df[numerical_cols].agg(['min', 'max']))
+
+print("\nSummary using describe():")
+print(df.describe())
+
+#D PartD:
+#Visualization of data set based on some conditions is done in part 4.
+#Bargraphs,tabular charts are displayed based on the requirement.
+
+
+sns.set(style="whitegrid")
+
+plt.figure()
+plt.hist(df['purchase_amount'], bins=20)
+plt.title("Histogram of Purchase Amount")
+plt.xlabel("Purchase Amount")
+plt.ylabel("Frequency")
+plt.show()
+
+plt.figure()
+df['region'].value_counts().plot(kind='bar')
+plt.title("Customer Count by Region")
+plt.xlabel("region")
+plt.ylabel("Number of Customers")
+plt.show()
+
+plt.figure()
+sns.boxplot(x=df['purchase_amount'])
+plt.title("Box Plot of Purchase Amount")
+plt.show()
+
+plt.figure()
+plt.scatter(df['age'], df['purchase_amount'])
+plt.title("Age vs Purchase Amount")
+plt.xlabel("Age")
+plt.ylabel("Purchase Amount")
+plt.show()
+
+plt.figure(figsize=(8, 6))
+sns.heatmap(df[numerical_cols].corr(), annot=True, cmap='coolwarm')
+plt.title("Correlation Heatmap")
+plt.show()
