@@ -1,0 +1,4 @@
+Hello PHP File Handling
+This is Lab Program
+Added using file_put_contents()
+File locked and written safely
