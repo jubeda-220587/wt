@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Events</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h2>Events</h2>
+<button id="btn">Click Me</button>
+<input type="text" id="input">
+<form id="form">
+<input type="text">
+<button type="submit">Submit</button>
+</form>
+<script>
+$(function(){
+$("#btn").click(()=>alert("click"));
+$("#btn").dblclick(()=>alert("double click"));
+$("#btn").mouseenter(()=>console.log("enter"));
+$("#btn").mouseleave(()=>console.log("leave"));
+$("#btn").hover(()=>console.log("hover"));
+$("#btn").mousedown(()=>console.log("down"));
+$("#btn").mouseup(()=>console.log("up"));
+$("#input").keypress(()=>console.log("keypress"));
+$("#input").keydown(()=>console.log("keydown"));
+$("#input").keyup(()=>console.log("keyup"));
+$("#form").submit(function(e){
+e.preventDefault();
+alert("submitted");
+});
+$("#input").change(()=>console.log("changed"));
+$("#input").focus(function(){ $(this).css("background","yellow"); });
+$("#input").blur(function(){ $(this).css("background","white"); });
+$("#btn").on("click", ()=>console.log("on click"));
+$("#btn").off("dblclick");
+});
+</script>
+</body>
+</html>
