@@ -1,19 +1,537 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
 <head>
-<title>jQuery Lab</title>
-<link rel="stylesheet" href="styles.css">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUBEDA | Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-<h1>jQuery Lab</h1>
-<nav>
-<a href="selectors.html">Selectors</a> |
-<a href="attributes.html">Attributes</a> |
-<a href="events.html">Events</a> |
-<a href="style.html">Style</a> |
-<a href="traversing.html">Traversing</a> |
-<a href="effects.html">Effects</a>
-</nav>
-<p>All jQuery concepts demonstration</p>
+
+<body data-bs-spy="scroll" data-bs-target="#main-nav" data-bs-offset="100">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav" id="main-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-gradient" href="#">JUBEDA.</a>
+            <button class="navbar-toggler border-0 custom-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-medium">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#contact" class="btn btn-primary rounded-pill px-4 custom-btn">Hire Me</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero d-flex align-items-center min-vh-100 position-relative pb-5">
+        <div class="container mt-5">
+            <div class="row align-items-center justify-content-center gx-5">
+                <div class="col-lg-8 hero-content text-center mt-5 mt-lg-0">
+                    <span class="badge bg-soft-primary text-primary mb-3 px-3 py-2 rounded-pill fs-6 fade-in-up">👋
+                        Hello, I'm</span>
+                    <h1 class="display-3 fw-bolder mb-3 fade-in-up delay-1">JUBEDA</h1>
+                    <h2 class="fs-4 text-secondary mb-4 fade-in-up delay-2">I build <span class="text-gradient">digital
+                            experiences</span> that matter.</h2>
+                    <p class="lead text-muted mb-5 fade-in-up delay-3 mx-auto" style="max-width: 600px;">Full-stack
+                        Software Engineer specializing in modern web development, responsive design, and scalable
+                        backends.</p>
+                    <div class="d-flex gap-3 justify-content-center fade-in-up delay-4">
+                        <a href="#projects" class="btn btn-primary rounded-pill px-4 py-3 custom-btn">
+                            View My Work <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
+                        <div class="social-links d-flex gap-2">
+                            <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator fade-in delay-5 d-none d-lg-block">
+            <a href="#about"><i class="fa-solid fa-arrow-down fa-bounce"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 section-padding">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h6 class="text-primary text-uppercase fw-bold tracking-wide">About Me</h6>
+                    <h2 class="display-5 fw-bold mb-3">Who I Am</h2>
+                    <div class="heading-line mx-auto"></div>
+                </div>
+            </div>
+            <div class="row align-items-center gx-5">
+                <div class="col-lg-5 mb-4 mb-lg-0 position-relative">
+                    <div class="about-img-box glass-card p-2 rounded-4">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Coding workspace" class="img-fluid rounded-4">
+                    </div>
+                    <div class="experience-badge glass-card position-absolute">
+                        <h3 class="fw-bold mb-0 text-gradient">5+</h3>
+                        <p class="mb-0 text-muted small">Years Exp.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h3 class="fw-bold mb-4">Passionate Developer Crafting High-Performance Web Applications</h3>
+                    <p class="text-muted fs-5 mb-4">I'm a self-taught developer with a deep passion for UI/UX design and
+                        scalable architecture. I love transforming complex problems into simple, beautiful, and
+                        intuitive solutions.</p>
+                    <div class="row mb-4">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                            <div class="d-flex align-items-center gap-3 info-item">
+                                <div class="icon-box glass-icon">
+                                    <i class="fa-solid fa-envelope text-primary"></i>
+                                </div>
+                                <div class="info-content">
+                                    <p class="text-muted small mb-0">Email</p>
+                                    <h6 class="mb-0 fw-bold">hello@jubeda.com</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center gap-3 info-item">
+                                <div class="icon-box glass-icon">
+                                    <i class="fa-solid fa-location-dot text-primary"></i>
+                                </div>
+                                <div class="info-content">
+                                    <p class="text-muted small mb-0">Location</p>
+                                    <h6 class="mb-0 fw-bold">San Francisco, CA</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2 hover-lift">
+                        <i class="fa-solid fa-download me-2"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-darker section-padding">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h6 class="text-primary text-uppercase fw-bold tracking-wide">My Expertise</h6>
+                    <h2 class="display-5 fw-bold mb-3">Skills & Technologies</h2>
+                    <div class="heading-line mx-auto"></div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Skill Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 glass-card skill-card border-0 p-4 hover-lift">
+                        <div class="card-body">
+                            <i class="fa-brands fa-html5 display-4 text-warning mb-3"></i>
+                            <h4 class="fw-bold mb-3">Frontend Development</h4>
+                            <p class="text-muted small mb-4">Crafting responsive and interactive user interfaces using
+                                modern web technologies.</p>
+
+                            <div class="progress-wrapper mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span class="small fw-semibold">HTML5 / CSS3</span>
+                                    <span class="small text-primary">95%</span>
+                                </div>
+                                <div class="progress mt-1" style="height: 6px;">
+                                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 95%"
+                                        aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-wrapper mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span class="small fw-semibold">JavaScript (ES6+)</span>
+                                    <span class="small text-primary">90%</span>
+                                </div>
+                                <div class="progress mt-1" style="height: 6px;">
+                                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 90%"
+                                        aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-wrapper">
+                                <div class="d-flex justify-content-between">
+                                    <span class="small fw-semibold">React / Next.js</span>
+                                    <span class="small text-primary">85%</span>
+                                </div>
+                                <div class="progress mt-1" style="height: 6px;">
+                                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 85%"
+                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 glass-card skill-card border-0 p-4 hover-lift">
+                        <div class="card-body">
+                            <i class="fa-brands fa-node-js display-4 text-success mb-3"></i>
+                            <h4 class="fw-bold mb-3">Backend Engineering</h4>
+                            <p class="text-muted small mb-4">Building robust APIs and scalable server-side applications.
+                            </p>
+
+                            <div class="progress-wrapper mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span class="small fw-semibold">Node.js / Express</span>
+                                    <span class="small text-primary">88%</span>
+                                </div>
+                                <div class="progress mt-1" style="height: 6px;">
+                                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 88%"
+                                        aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-wrapper mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span class="small fw-semibold">Python / Django</span>
+                                    <span class="small text-primary">80%</span>
+                                </div>
+                                <div class="progress mt-1" style="height: 6px;">
+                                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 80%"
+                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-wrapper">
+                                <div class="d-flex justify-content-between">
+                                    <span class="small fw-semibold">SQL / NoSQL</span>
+                                    <span class="small text-primary">85%</span>
+                                </div>
+                                <div class="progress mt-1" style="height: 6px;">
+                                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 85%"
+                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 glass-card skill-card border-0 p-4 hover-lift">
+                        <div class="card-body">
+                            <i class="fa-solid fa-layer-group display-4 text-info mb-3"></i>
+                            <h4 class="fw-bold mb-3">UI/UX Design</h4>
+                            <p class="text-muted small mb-4">Focusing on pixel-perfect design and intuitive user
+                                workflows.</p>
+
+                            <div class="progress-wrapper mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span class="small fw-semibold">Figma / XD</span>
+                                    <span class="small text-primary">90%</span>
+                                </div>
+                                <div class="progress mt-1" style="height: 6px;">
+                                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 90%"
+                                        aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-wrapper mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span class="small fw-semibold">Tailwind / Bootstrap</span>
+                                    <span class="small text-primary">95%</span>
+                                </div>
+                                <div class="progress mt-1" style="height: 6px;">
+                                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 95%"
+                                        aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-wrapper">
+                                <div class="d-flex justify-content-between">
+                                    <span class="small fw-semibold">Responsive Design</span>
+                                    <span class="small text-primary">100%</span>
+                                </div>
+                                <div class="progress mt-1" style="height: 6px;">
+                                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 100%"
+                                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech badges -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <div class="d-flex flex-wrap justify-content-center gap-3 align-items-center">
+                        <span class="badge glass-badge fs-6 fw-normal px-3 py-2"><i
+                                class="fa-brands fa-react me-2 text-info"></i>React</span>
+                        <span class="badge glass-badge fs-6 fw-normal px-3 py-2"><i
+                                class="fa-brands fa-vuejs me-2 text-success"></i>Vue.js</span>
+                        <span class="badge glass-badge fs-6 fw-normal px-3 py-2"><i
+                                class="fa-brands fa-bootstrap me-2 text-primary"></i>Bootstrap</span>
+                        <span class="badge glass-badge fs-6 fw-normal px-3 py-2"><i
+                                class="fa-brands fa-sass me-2 text-danger"></i>Sass</span>
+                        <span class="badge glass-badge fs-6 fw-normal px-3 py-2"><i
+                                class="fa-brands fa-npm me-2 text-danger"></i>NPM</span>
+                        <span class="badge glass-badge fs-6 fw-normal px-3 py-2"><i
+                                class="fa-brands fa-git-alt me-2 text-warning"></i>Git</span>
+                        <span class="badge glass-badge fs-6 fw-normal px-3 py-2"><i
+                                class="fa-brands fa-aws me-2 text-warning"></i>AWS</span>
+                        <span class="badge glass-badge fs-6 fw-normal px-3 py-2"><i
+                                class="fa-brands fa-docker me-2 text-primary"></i>Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 section-padding">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h6 class="text-primary text-uppercase fw-bold tracking-wide">Featured Works</h6>
+                    <h2 class="display-5 fw-bold mb-3">Portfolio Projects</h2>
+                    <div class="heading-line mx-auto"></div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card glass-card border-0 h-100 overflow-hidden">
+                        <div class="position-relative overflow-hidden project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                class="card-img-top" alt="Project 1">
+                            <div class="project-overlay d-flex align-items-center justify-content-center gap-3">
+                                <a href="#" class="btn btn-light rounded-circle shadow-sm demo-link"><i
+                                        class="fa-solid fa-link"></i></a>
+                                <a href="#" class="btn btn-light rounded-circle shadow-sm demo-link"><i
+                                        class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="mb-2">
+                                <span class="badge bg-soft-primary text-primary px-2 py-1 rounded small">FinTech</span>
+                                <span class="badge bg-soft-primary text-primary px-2 py-1 rounded small">React</span>
+                            </div>
+                            <h5 class="card-title fw-bold mt-3">Crypto Dashboard MVP</h5>
+                            <p class="card-text text-muted small mb-0">A real-time cryptocurrency tracking dashboard
+                                with interactive charts and portfolio management.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card glass-card border-0 h-100 overflow-hidden">
+                        <div class="position-relative overflow-hidden project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                class="card-img-top" alt="Project 2">
+                            <div class="project-overlay d-flex align-items-center justify-content-center gap-3">
+                                <a href="#" class="btn btn-light rounded-circle shadow-sm demo-link"><i
+                                        class="fa-solid fa-link"></i></a>
+                                <a href="#" class="btn btn-light rounded-circle shadow-sm demo-link"><i
+                                        class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="mb-2">
+                                <span
+                                    class="badge bg-soft-primary text-primary px-2 py-1 rounded small">E-Commerce</span>
+                                <span class="badge bg-soft-primary text-primary px-2 py-1 rounded small">Node.js</span>
+                            </div>
+                            <h5 class="card-title fw-bold mt-3">Vanguard Storefront</h5>
+                            <p class="card-text text-muted small mb-0">Full-stack e-commerce solution features
+                                integrated Stripe payments and robust admin panel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card project-card glass-card border-0 h-100 overflow-hidden">
+                        <div class="position-relative overflow-hidden project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                class="card-img-top" alt="Project 3">
+                            <div class="project-overlay d-flex align-items-center justify-content-center gap-3">
+                                <a href="#" class="btn btn-light rounded-circle shadow-sm demo-link"><i
+                                        class="fa-solid fa-link"></i></a>
+                                <a href="#" class="btn btn-light rounded-circle shadow-sm demo-link"><i
+                                        class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="mb-2">
+                                <span class="badge bg-soft-primary text-primary px-2 py-1 rounded small">SaaS</span>
+                                <span class="badge bg-soft-primary text-primary px-2 py-1 rounded small">Vue.js</span>
+                            </div>
+                            <h5 class="card-title fw-bold mt-3">TaskFlow CRM</h5>
+                            <p class="card-text text-muted small mb-0">Productivity and task management application
+                                designed for remote agile teams.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2 hover-lift">View All Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-darker section-padding position-relative overflow-hidden">
+        <div class="blob-shape glass-effect contact-blob"></div>
+        <div class="container position-relative z-1">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h6 class="text-primary text-uppercase fw-bold tracking-wide">Get In Touch</h6>
+                    <h2 class="display-5 fw-bold mb-3">Let's Work Together</h2>
+                    <div class="heading-line mx-auto"></div>
+                </div>
+            </div>
+
+            <div class="row g-5 justify-content-center">
+                <div class="col-lg-5">
+                    <div class="p-4 glass-card rounded-4 h-100">
+                        <h4 class="fw-bold mb-4">Contact Information</h4>
+                        <p class="text-muted mb-4">Feel free to reach out to me for any project or collaboration
+                            opportunities. I am always open to discussing new projects, creative ideas or opportunities
+                            to be part of your visions.</p>
+
+                        <div class="d-flex align-items-center gap-3 mt-4 mb-3">
+                            <div class="icon-box-small glass-icon">
+                                <i class="fa-solid fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Phone Number</h6>
+                                <p class="text-muted small mb-0">+1 (234) 567-890</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-box-small glass-icon">
+                                <i class="fa-solid fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Email Address</h6>
+                                <p class="text-muted small mb-0">hello@jubeda.com</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box-small glass-icon">
+                                <i class="fa-solid fa-location-dot text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Location</h6>
+                                <p class="text-muted small mb-0">San Francisco, California</p>
+                            </div>
+                        </div>
+
+                        <hr class="border-secondary my-4">
+                        <h6 class="fw-bold mb-3">Connect with me</h6>
+                        <div class="d-flex gap-2">
+                            <a href="#" class="social-icon bg-dark"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="social-icon bg-dark"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon bg-dark"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <form class="glass-card p-4 p-md-5 rounded-4 shadow-sm needs-validation" novalidate
+                        onsubmit="event.preventDefault(); alert('Message sent! This is a demo.');">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control custom-input" id="nameInput"
+                                        placeholder="JUBEDA" required>
+                                    <label for="nameInput">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control custom-input" id="emailInput"
+                                        placeholder="name@example.com" required>
+                                    <label for="emailInput">Email address</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control custom-input" id="subjectInput"
+                                        placeholder="Project Discussion" required>
+                                    <label for="subjectInput">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-4">
+                                    <textarea class="form-control custom-input" placeholder="Leave a message here"
+                                        id="messageInput" style="height: 150px" required></textarea>
+                                    <label for="messageInput">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit"
+                                    class="btn btn-primary rounded-pill px-5 py-3 w-100 fw-bold custom-btn">Send Message
+                                    <i class="fa-solid fa-paper-plane ms-2"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center border-top border-secondary bg-darker pt-5">
+        <div class="container">
+            <h3 class="fw-bold fs-4 text-gradient mb-3">JUBEDA.</h3>
+            <p class="text-muted small mb-0">&copy; 2026 JUBEDA. All rights reserved.</p>
+            <p class="text-muted small">Coded with <i class="fa-solid fa-heart text-danger mx-1"></i> using Bootstrap 5
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
